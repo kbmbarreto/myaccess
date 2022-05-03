@@ -9,9 +9,9 @@ import javax.xml.stream.Location
 
 interface UserRepository : JpaRepository<User, Long> {
 
-    fun onLocationMeasured(location: String)
-
     fun findByUsername(username: User)
 
-    fun existsByUsername(username: User)
+    fun existsByUsername(username: User): BooleanArray {
+        return booleanArrayOf()
+    }
 }

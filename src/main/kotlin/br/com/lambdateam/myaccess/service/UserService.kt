@@ -2,9 +2,9 @@ package br.com.lambdateam.myaccess.service
 
 import br.com.lambdateam.myaccess.model.User
 
-class UserService {
+open class UserService {
 
-    fun auth(username: User, password: User) {}
+    fun authUser(username: User, password: User) {}
 
     fun saveUser(username: User, password: User) {}
 
