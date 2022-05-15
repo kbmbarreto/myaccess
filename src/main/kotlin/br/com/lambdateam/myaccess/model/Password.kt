@@ -1,9 +1,5 @@
 package br.com.lambdateam.myaccess.model
 
-import lombok.AllArgsConstructor
-import lombok.Builder
-import lombok.Data
-import lombok.NoArgsConstructor
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -14,11 +10,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "password")
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
-class Password (
+data class Password (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +23,7 @@ class Password (
     val user: String,
     @Column(name = "password", length = 128)
     val password: String,
-    @Column(name = "notes", length = 256)
+    @Column(name = "notes", length = 128)
     val notes: String,
     @ManyToOne
     val iduser: User
