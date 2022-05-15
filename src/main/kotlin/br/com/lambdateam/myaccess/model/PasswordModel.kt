@@ -10,7 +10,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "password")
-data class Password (
+data class PasswordModel (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ data class Password (
     @Column(name = "notes", length = 128)
     val notes: String,
     @ManyToOne
-    val iduser: User
+    val iduser: UserModel
 
     )

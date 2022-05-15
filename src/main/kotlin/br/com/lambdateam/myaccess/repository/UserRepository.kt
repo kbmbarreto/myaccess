@@ -1,17 +1,13 @@
 package br.com.lambdateam.myaccess.repository;
 
-import br.com.lambdateam.myaccess.model.User
-import lombok.AllArgsConstructor
-import lombok.Data
+import br.com.lambdateam.myaccess.model.UserModel
 import org.springframework.data.jpa.repository.JpaRepository
-import java.util.Optional
-import javax.xml.stream.Location
 
-interface UserRepository : JpaRepository<User, Long> {
+interface UserRepository : JpaRepository<UserModel, Long> {
 
-    fun findByUsername(username: User)
+    fun findByUsername(username: UserModel)
 
-    fun existsByUsername(username: User): BooleanArray {
+    fun existsByUsername(username: UserModel): BooleanArray {
         return booleanArrayOf()
     }
 }
