@@ -1,8 +1,8 @@
-# myaccess
-Sistema gerenciador de senhas, criado em Kotlin.
+# MyAccess
+###Sistema para armazenagem e gerenciamento de senhas.
 
 Tecnologias utilizadas: 
 
- -> Kotlin;
- -> Spring;
- -> JUnit 4;
+ -> Kotlin;<br>
+ -> Spring;<br>
+ -> JUnit;<br>
