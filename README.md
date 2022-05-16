@@ -14,7 +14,7 @@ Para rodar o projeto, utlize a IDE que você mais se identifique **(no meu caso,
 
 **Exemplo do arquivo application.properties**:
 
-````kotlin
+````java
 ## Application port
         server.port=8001
 
