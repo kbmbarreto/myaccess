@@ -7,7 +7,9 @@
 - Kotlin
 - Maven
 - Spring Framework
+- H2 database
 - JUnit
+- Swagger 2
 
 ## Preparação do ambiente
 Para rodar o projeto, utlize a IDE que você mais se identifique **(no meu caso, utilizo o IntelliJ)**, em seguida, altere o arquivo **application.properties** para que o projeto se adeque ao seu servidor de **banco de dados**:
