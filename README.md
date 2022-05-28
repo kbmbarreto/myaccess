@@ -18,18 +18,18 @@ Para rodar o projeto, utlize a IDE que você mais se identifique **(no meu caso,
 
 ````java
 ## Application port
-        server.port=8001
+server.port=8001
 
-        ## default connection pool
-        spring.datasource.hikari.connectionTimeout=20000
-        spring.datasource.hikari.maximumPoolSize=5
+## default connection pool
+spring.datasource.hikari.connectionTimeout=20000
+spring.datasource.hikari.maximumPoolSize=5
 
-        ## Configurações do H2 database
-        spring.datasource.url=jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS myaccess
-        spring.datasource.username=sa
-        spring.datasource.password=sa
-        spring.datasource.driver-class-name=org.h2.Driver
-        spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+## Configurações do H2 database
+spring.datasource.url=jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS myaccess
+spring.datasource.username=sa
+spring.datasource.password=sa
+spring.datasource.driver-class-name=org.h2.Driver
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 ````
 
 Em seguida, basta criar um banco de dados no MySql com o comando `Create schema {Nome do banco de dados}`
