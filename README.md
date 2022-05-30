@@ -38,3 +38,4 @@ Em seguida, basta criar um banco de dados no MySql com o comando `Create schema 
 
 - [Configurar variáveis de ambiente JAVA](https://mauriciogeneroso.medium.com/configurando-java-4-como-configurar-as-vari%C3%A1veis-java-home-path-e-classpath-no-windows-46040950638f)
 - [Configurar variáveis de ambiente MAVEN](https://pt.stackoverflow.com/questions/259927/como-configurar-vari%C3%A1veis-de-ambiente-maven-java)
+- [Documentação da API (disponivel com o servidor rodando)](http://localhost:8001/myaccess/v1/swagger-ui.html#)
