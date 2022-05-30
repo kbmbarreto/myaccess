@@ -16,7 +16,9 @@ data class UserModel(
     var idUser: Long,
     @Column(name = "username", length = 60)
     val username: String,
-    @Column(name = "password", length = 128)
+    @Column(name = "email", length = 75)
+    val email: String,
+    @Column(name = "password", length = 256)
     val password: String
 
     )
