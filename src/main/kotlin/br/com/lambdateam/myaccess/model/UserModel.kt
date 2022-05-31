@@ -13,12 +13,12 @@ data class UserModel(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idUser: Long,
+    var idUser: Long? = null,
     @Column(name = "username", length = 60)
-    val username: String,
+    var username: String,
     @Column(name = "email", length = 75)
-    val email: String,
+    var email: String,
     @Column(name = "password", length = 256)
-    val password: String
+    var password: String
 
     )
