@@ -23,7 +23,7 @@ class SwaggerConfig {
         .apiInfo(
             ApiInfoBuilder()
                 .title("My Access")
-                .description("Documentação de API do sistema MyAccess.")
+                .description("Documentação de API do sistema MyAccess - Gerenciador de senhas.")
                 .build()
         )
 }
