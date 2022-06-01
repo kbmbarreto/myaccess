@@ -48,6 +48,7 @@ class UserController(private val userService: UserService) {
         userService.update(user.toUserModel(userSaved))
     }
 
+    //TODO: ARRUMAR O MÉTODO DE DELETE
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun delete(@PathVariable idUser: Long) {
