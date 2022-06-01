@@ -7,6 +7,7 @@ import br.com.lambdateam.myaccess.extension.toResponse
 import br.com.lambdateam.myaccess.extension.toUserModel
 import br.com.lambdateam.myaccess.service.UserService
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -47,5 +48,9 @@ class UserController(private val userService: UserService) {
         userService.update(user.toUserModel(userSaved))
     }
 
-
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun delete(@PathVariable idUser: Long) {
+        userService.delete(idUser)
+    }
 }
