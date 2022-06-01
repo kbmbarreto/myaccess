@@ -7,6 +7,7 @@ import br.com.lambdateam.myaccess.extension.toUserModel
 import br.com.lambdateam.myaccess.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -21,8 +22,8 @@ import javax.validation.Valid
 class UserController(private val userService: UserService) {
 
     @GetMapping
-    fun getAll(@RequestParam username: String?): List<UserResponse> {
-        return userService.getAll(username).map { it.toResponse() }
+    fun getByUsername(@RequestParam username: String?): List<UserResponse> {
+        return userService.getByUsername(username).map { it.toResponse() }
     }
 
     @PostMapping
@@ -30,4 +31,10 @@ class UserController(private val userService: UserService) {
     fun create(@RequestBody @Valid user: PostUserRequest) {
         userService.create(user.toUserModel())
     }
+
+    @GetMapping("/{id}")
+    fun getById(@PathVariable idUser: Long): UserResponse {
+        return userService.findById(idUser).toResponse()
+    }
+
 }

@@ -11,7 +11,7 @@ class UserService (
     private val userRepository: UserRepository
         ) {
 
-    fun getAll(username: String?): List<UserModel> {
+    fun getByUsername(username: String?): List<UserModel> {
         username?.let {
             return userRepository.findByUsernameContaining(it)
         }
