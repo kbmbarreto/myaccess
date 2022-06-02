@@ -5,6 +5,7 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
 import javax.persistence.Table
 
@@ -14,18 +15,19 @@ data class PasswordModel (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idPassword: Long,
+    var idPassword: Long? = null,
     @Column(name = "description", length = 128)
-    val description: String,
+    var description: String,
     @Column(name = "url", length = 128)
-    val url: String,
+    var url: String,
     @Column(name = "user", length = 64)
-    val user: String,
+    var user: String,
     @Column(name = "password", length = 128)
-    val password: String,
+    var password: String,
     @Column(name = "notes", length = 128)
-    val notes: String,
+    var notes: String,
     @ManyToOne
-    val iduser: UserModel
+    @JoinColumn(name = "id_user")
+    var idUser: UserModel? = null
 
     )

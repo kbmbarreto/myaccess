@@ -5,6 +5,7 @@ import br.com.lambdateam.myaccess.exception.NotFoundException
 import br.com.lambdateam.myaccess.model.UserModel
 import br.com.lambdateam.myaccess.repository.UserRepository
 import org.springframework.stereotype.Service
+import org.springframework.web.bind.annotation.PathVariable
 
 @Service
 class UserService (
@@ -28,18 +29,14 @@ class UserService (
 
     fun update(user: UserModel) {
         if(!userRepository.existsById(user.idUser!!)){
-            throw NotFoundException(Errors.SIS201.message.format(user.idUser), Errors.SIS201.code)
+            throw Exception()
         }
-
-        userRepository.save(user)
+            userRepository.save(user)
     }
 
-    fun delete(id: Long) {
-        val user = findById(id)
-        userRepository.save(user)
-    }
+    fun delete(idUser: Long) = userRepository.delete(findById(idUser))
 
-//    fun emailAvailable(email: String): Boolean {
-//        return !userRepository.existsByEmail(email)
-//    }
+    fun emailAvailable(email: String): Boolean {
+        return !userRepository.existsByEmail(email)
+    }
 }

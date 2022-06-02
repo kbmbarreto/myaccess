@@ -40,7 +40,6 @@ class UserController(private val userService: UserService) {
         return userService.findById(idUser).toResponse()
     }
 
-    //TODO: ARRUMAR O MÉTODO DE UPDATE
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun update(@PathVariable idUser: Long, @RequestBody @Valid user: PutUserRequest) {
@@ -48,10 +47,7 @@ class UserController(private val userService: UserService) {
         userService.update(user.toUserModel(userSaved))
     }
 
-    //TODO: ARRUMAR O MÉTODO DE DELETE
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{/id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun delete(@PathVariable idUser: Long) {
-        userService.delete(idUser)
-    }
+    fun delete(@PathVariable("id") idUser: Long) = userService.delete(idUser)
 }

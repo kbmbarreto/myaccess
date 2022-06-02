@@ -1,8 +1,10 @@
 package br.com.lambdateam.myaccess.extension
 
+import br.com.lambdateam.myaccess.controller.request.PostPasswordRequest
 import br.com.lambdateam.myaccess.controller.request.PostUserRequest
 import br.com.lambdateam.myaccess.controller.request.PutUserRequest
 import br.com.lambdateam.myaccess.controller.response.UserResponse
+import br.com.lambdateam.myaccess.model.PasswordModel
 import br.com.lambdateam.myaccess.model.UserModel
 
 fun UserModel.toResponse(): UserResponse {
@@ -28,5 +30,16 @@ fun PutUserRequest.toUserModel(previousValue: UserModel): UserModel {
         username = this.username,
         email = this.email,
         password = this.password
+    )
+}
+
+fun PostPasswordRequest.toPasswordModel(idUser: UserModel): PasswordModel {
+    return PasswordModel(
+        description = this.description,
+        url = this.url,
+        user = this.user,
+        password = this.password,
+        notes = this.notes,
+        idUser = idUser
     )
 }
