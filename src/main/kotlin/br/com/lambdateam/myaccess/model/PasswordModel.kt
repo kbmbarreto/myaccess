@@ -28,6 +28,6 @@ data class PasswordModel (
     var notes: String,
     @ManyToOne
     @JoinColumn(name = "id_user")
-    var idUser: UserModel? = null
+    var userId: UserModel? = null
 
     )

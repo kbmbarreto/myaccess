@@ -23,6 +23,6 @@ data class PostPasswordRequest (
     @field:Null
     var notes: String,
 
-    @JsonAlias("id_user")
-    var idUser: Long
+    @JsonAlias("user_id")
+    var userId: Long
 )

@@ -5,7 +5,6 @@ import br.com.lambdateam.myaccess.exception.NotFoundException
 import br.com.lambdateam.myaccess.model.UserModel
 import br.com.lambdateam.myaccess.repository.UserRepository
 import org.springframework.stereotype.Service
-import org.springframework.web.bind.annotation.PathVariable
 
 @Service
 class UserService (

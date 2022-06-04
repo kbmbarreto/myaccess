@@ -1,10 +1,14 @@
 package br.com.lambdateam.myaccess.controller
 
+import br.com.lambdateam.myaccess.controller.request.PostPasswordRequest
 import br.com.lambdateam.myaccess.controller.request.PostUserRequest
 import br.com.lambdateam.myaccess.controller.request.PutUserRequest
+import br.com.lambdateam.myaccess.controller.response.PasswordResponse
 import br.com.lambdateam.myaccess.controller.response.UserResponse
+import br.com.lambdateam.myaccess.extension.toPasswordModel
 import br.com.lambdateam.myaccess.extension.toResponse
 import br.com.lambdateam.myaccess.extension.toUserModel
+import br.com.lambdateam.myaccess.service.PasswordService
 import br.com.lambdateam.myaccess.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -20,18 +24,19 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("users")
-class UserController(private val userService: UserService) {
+@RequestMapping("passwords")
+class PasswordController(private val passwordService: PasswordService) {
 
     @GetMapping
-    fun getByUsername(@RequestParam username: String?): List<UserResponse> {
-        return userService.getByUsername(username).map { it.toResponse() }
+    fun getByDescription(@RequestParam description: String?): List<PasswordResponse> {
+        return passwordService.getByDescription(description).map { it.toResponse() }
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody @Valid user: PostUserRequest) {
-        userService.create(user.toUserModel())
+    fun create(@RequestBody @Valid request: PostPasswordRequest) {
+        val user = passwordService.findById(request.userId)
+        passwordService.create(request.toPasswordModel(user))
     }
 
     @GetMapping("/{id}")
