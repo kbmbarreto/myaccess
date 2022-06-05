@@ -31,3 +31,17 @@ data class PasswordModel (
     var userId: UserModel? = null
 
     )
+
+//{
+//    constructor(
+//        idPassword: Long? = null,
+//        description: String,
+//        url: String,
+//        user: String,
+//        password: String,
+//        notes: String,
+//        userId: UserModel?
+//    ) : this(idPassword, description, url, user, password, notes, userId) {
+//
+//    }
+//}
